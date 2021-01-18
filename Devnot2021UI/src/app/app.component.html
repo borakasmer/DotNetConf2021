@@ -1,0 +1,81 @@
+<router-outlet></router-outlet>
+<h1>Ürün Sayfası</h1>
+<form class="form-horizontal" #myForm="ngForm" (ngSubmit)="saveForm(myForm.form)" autocomplete="off"> 
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <div class="form-group row">
+                    <label for="txtName" class="col-sm-4 col-form-label">Adı</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="txtName" name="txtName" placeholder="" [(ngModel)]="product.Name" #Name="ngModel" required> 
+                        <div *ngIf="Name.touched && Name.errors">                      
+                            <div class="alert alert-danger" *ngIf="Name.errors.required">İsim Alanı Zorunludur!</div>                      
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="txtSeriNo" class="col-sm-4 col-form-label">SeriNo</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="txtSeriNo" name="txtSeriNo" placeholder="" [(ngModel)]="product.SeriNo" #SeriNo="ngModel" required>
+                        <div *ngIf="SeriNo.touched && SeriNo.errors">                      
+                            <div class="alert alert-danger" *ngIf="SeriNo.errors.required">SeriNo Alanı Zorunludur!</div>                      
+                        </div>
+                    </div>
+                </div>                                  
+            </div>
+            <div class="col">
+                <div class="form-group row">
+                    <label for="txtTotlaCount" class="col-sm-4 col-form-label">Toplam Sayı</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="txtTotlaCount" name="txtTotlaCount" placeholder="" [(ngModel)]="product.TotalCount" #TotalCount="ngModel" required>
+                        <div *ngIf="TotalCount.touched && TotalCount.errors">                      
+                            <div class="alert alert-danger" *ngIf="TotalCount.errors.required">Toplam Sayı Alanı Zorunludur!</div>                      
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="txtPrice" class="col-sm-4 col-form-label">Fiyat</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="txtPrice" name="txtPrice" placeholder="" [(ngModel)]="product.Price" #Price="ngModel" required>                                           
+                        <div *ngIf="Price.touched && Price.errors">                      
+                            <div class="alert alert-danger" *ngIf="Price.errors.required">Fiyat Alanı Zorunludur!</div>                      
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">                                       
+                    <label for="cmbIdSecurityController" class="col-sm-4 col-form-label">Kur Tipi</label>
+                    <div class="col-sm-6">                                                                                      
+                        <select id="cmbExchangeType" name="cmbExchangeType" class="form-control" [(ngModel)]="product.ExchangeType">
+                            <option [ngValue]="undefined">Seçiniz</option>
+                            <option *ngFor="let item of exchangeTypeList; let i = index" [ngValue]="item.ID">{{item.ExchangeName}}</option>
+                        </select>                                            
+                    </div>
+                </div>
+            </div>           
+        </div>
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer">                         
+        <button type="button" (click)="clearForm()" class="btn btn-danger" id="btnClear" name="btnClear">Temizle</button>
+        <button type="submit" [disabled]="!myForm.form.valid || selectedTable!=null" class="btn btn-info float-right" id="Kaydet">Kaydet</button>
+    </div>
+    <!-- /.card-footer -->
+</form>
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-11">
+        <ag-grid-angular
+        id="myGrid"
+        style="width: 100%; height: 300px;"
+        class="ag-theme-alpine"
+        [rowData]="rowData"
+        [columnDefs]="columnDefs"
+        [defaultColDef]="defaultColDef"
+        rowSelection="single"
+        [frameworkComponents]="frameworkComponents"
+        (gridReady)="onGridReady($event)">
+        </ag-grid-angular>
+    </div>
+</div>
