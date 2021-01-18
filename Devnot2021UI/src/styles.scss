@@ -1,0 +1,29 @@
+@import "../node_modules/ag-grid-community/src/styles/ag-grid.scss";
+@import "../node_modules/ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin.scss";
+.ag-theme-alpine {
+    @include ag-theme-alpine();
+}
+
+.form-control.ng-valid:not(form)  {
+    border-left: 2px solid #42A948; /* green */
+}
+
+.form-control.ng-invalid:not(form)  {
+    border-left: 2px solid #dc3545; /* red */
+}
+
+textarea.ng-invalid:not(form) {
+    border-left: 2px solid #dc3545 !important;
+}
+ 
+.ng-dirty:not(form) .ng-dirty:not(:focus){
+    background-color: black !important;
+}
+
+.ng-untouched .ng-pristine .ng-valid:not(form){
+    background-color: white !important;
+}
+
+.ng-touched.ng-dirty.ng-valid.m-input:not(form){
+    border-left: 10px solid aqua !important;
+}
