@@ -1,0 +1,17 @@
+C:\Devnot2021\Repository\bin\Debug\net5.0\Repository.deps.json
+C:\Devnot2021\Repository\bin\Debug\net5.0\Repository.dll
+C:\Devnot2021\Repository\bin\Debug\net5.0\ref\Repository.dll
+C:\Devnot2021\Repository\bin\Debug\net5.0\Repository.pdb
+C:\Devnot2021\Repository\obj\Debug\net5.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Devnot2021\Repository\obj\Debug\net5.0\Repository.AssemblyInfoInputs.cache
+C:\Devnot2021\Repository\obj\Debug\net5.0\Repository.AssemblyInfo.cs
+C:\Devnot2021\Repository\obj\Debug\net5.0\Repository.csproj.CoreCompileInputs.cache
+C:\Devnot2021\Repository\obj\Debug\net5.0\Repository.dll
+C:\Devnot2021\Repository\obj\Debug\net5.0\ref\Repository.dll
+C:\Devnot2021\Repository\obj\Debug\net5.0\Repository.pdb
+C:\Devnot2021\Repository\obj\Debug\net5.0\Repository.csprojAssemblyReference.cache
+C:\Devnot2021\Repository\bin\Debug\net5.0\Core.dll
+C:\Devnot2021\Repository\bin\Debug\net5.0\DAL.dll
+C:\Devnot2021\Repository\bin\Debug\net5.0\Core.pdb
+C:\Devnot2021\Repository\bin\Debug\net5.0\DAL.pdb
+C:\Devnot2021\Repository\obj\Debug\net5.0\Repository.csproj.CopyComplete
